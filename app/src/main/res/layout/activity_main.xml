@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C8CACF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="3"
+            android:background="#3F51B5"
+            android:gravity="center"
+            android:text="SSID"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="3"
+            android:background="#3F51B5"
+            android:gravity="center"
+            android:text="Passphrase "
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp">
+
+                <TableRow
+                    android:layout_height="300dp"
+                    android:background="#E5E7FA"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="Alex_Perrakis"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="perrakis$21"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ECEEFD"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="COSMOTE-5G"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:text="iasdi38u8fasdf$"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+                </TableRow>
+
+                <!-- Other rows similar to the first row -->
+            </TableLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Credentials"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#232F6E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/refreshBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#129ED5"
+                android:text="Refresh"
+                app:layout_constraintBottom_toTopOf="@+id/label2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/exportBtn" />
+
+            <Button
+                android:id="@+id/exportBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FB8C00"
+                android:text="Export"
+                app:layout_constraintBottom_toTopOf="@+id/label2"
+                app:layout_constraintEnd_toStartOf="@+id/refreshBtn"
+                app:layout_constraintStart_toEndOf="@+id/deleteBtn" />
+
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#DA3434"
+                android:text="Delete"
+                app:layout_constraintBottom_toTopOf="@+id/label2"
+                app:layout_constraintEnd_toStartOf="@+id/exportBtn"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:text="WiFi Credential Stealer by Alex Perrakis"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
